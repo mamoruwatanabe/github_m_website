@@ -1,0 +1,204 @@
+/* --------------------------------------------------
+ 00: Reset Style
+ -------------------------------------------------- */
+
+ html, body, div, span, object, iframe,
+ h1, h2, h3, h3, h5, h6, p, blockquote, pre,
+ abbr, address, cite, code,
+ del, dfn, em, img, ins, kbd, q, samp,
+ small, strong, sub, sup, var,
+ b, i,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, figcaption, figure,
+ footer, header, menu, nav, section, summary,
+ time, mark, audio, video {	
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	margin: 0;
+ 	outline: 0;
+ 	padding: 0;
+ 	vertical-align: baseline;
+ }
+
+
+/* --------------------------------------------------
+ 01: Basic Style
+ -------------------------------------------------- */
+
+ *,
+ *:before,
+ *:after {
+ 	box-sizing: border-box;
+ }
+
+ html{
+ 	font-size: 62.5%;
+ }
+
+ body {
+ 	background-color: #fffff;
+ 	color: #00000;
+ 	font-family: "helvetica", bold;
+ 	font-size: 1.6rem;
+ 	font-style: normal;
+ 	font-weight: 500;
+ 	letter-spacing: 0.075em;
+ 	line-height: 1;
+ 	-webkit-text-size-adjust: 100%;	
+ }
+
+ a{
+ 	color: inherit;
+ 	text-decoration: none;
+ }
+
+ p{
+ 	font-size: 1.3rem;
+ 	margin-bottom: 2rem;
+ }
+
+ ul{
+ 	list-style-type: none;
+ }
+
+ 	
+ h1{
+ 	font-size: 2rem;
+ 	font-family: "STIXGeneral";
+ 	font-weight: 200;
+ 	margin-bottom: 2rem;
+
+ }
+
+
+ h2{
+	 	font-size: 2rem;
+	 	font-family: "helvetica";
+	 	font-weight: 100;
+	 	font-style: normal;
+	 	font-weight: 1000;
+	 }
+
+h3{
+	 	font-size: 1.8rem;
+	 	font-family: "helvetica", bold;
+	 	font-weight: 100;
+	 	font-style: normal;
+	 	font-weight: 1000;
+	 }
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+	 h1{
+	 	font-size: 3rem;
+	 	font-weight
+	 }
+
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+
+
+/* --------------------------------------------------
+ 01: Wrapper Style
+ -------------------------------------------------- */
+
+.wrapper {
+	/*background: #C0C0C0;*/
+	margin: 15rem 15rem 10rem 30rem;
+}
+
+	.wrapper > * {
+		margin-bottom: 10rem;
+	}
+
+@media only screen and (max-width: 768px) {
+
+	.wrapper > *{
+		
+	}
+
+}
+
+
+/* --------------------------------------------------
+ 02: Header Style
+ -------------------------------------------------- */
+
+#header {
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.header_inner {
+	padding: 4rem;
+}
+
+
+/* MENU */
+
+.menu{
+  background: #00000;
+  display: inline-flex;
+  -webkit-transform: translateX(-47.75%) rotate(-90deg);
+  transform: translateX(-47.75%) rotate(-90deg);
+  position: absolute;
+  left: 4rem;
+  top: 50%;
+}
+
+
+.menu li{
+  float:left;
+  line-height:2rem;
+  padding: 0 5rem;
+  text-align:center;
+  background:#000;
+  color:#fff;
+  font-family: "helvetica";
+  font-weight: lighter;
+}
+
+	.menu li:nth-child(2n){
+		padding: 0;
+	}
+
+
+/* --------------------------------------------------
+ 03: Front Header Style
+ -------------------------------------------------- */
+
+.project_image_container{
+	width: 100%;
+}
+
+	.project_image_container:nth-child(2n) .project_image{
+		margin: auto auto auto 0;
+	}
+
+.project_image{
+	margin: auto 0 auto auto;
+	width: 65rem;
+}
+
+
+
+
+/* --------------------------------------------------
+ 04: Footer
+ -------------------------------------------------- */
+
