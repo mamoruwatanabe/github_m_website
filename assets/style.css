@@ -115,8 +115,8 @@ img{
  -------------------------------------------------- */
 
 .wrapper {
-	/*background: #C0C0C0;*/
-	margin: 15rem 15rem 10rem 30rem;
+	background-color: grey;
+	margin: 15rem 15rem 15rem 30rem;
 }
 
 	.wrapper > * {
@@ -179,23 +179,32 @@ img{
 
 
 /* --------------------------------------------------
- 03: Front Header Style
+ 03: Works Style
  -------------------------------------------------- */
 
-.project_image_container{
+.proj_img_container{
+	/*background-color: blue;*/
+	position: relative;
 	width: 100%;
 }
 
-	.project_image_container:nth-child(2n) .project_image{
+	.proj_img_container:nth-child(2n) .proj_img{
 		margin: auto auto auto 0;
 	}
 
-.project_image{
+.proj_img{
 	margin: auto 0 auto auto;
+	position: relative;
 	width: 65rem;
 }
 
-
+img.proj_img_bg {
+	height: 100%;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.5rem;
+	z-index: -1;
+}
 
 
 /* --------------------------------------------------
