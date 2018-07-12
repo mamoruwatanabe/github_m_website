@@ -73,22 +73,21 @@
 
  }
 
-
- h2{
-	 	font-size: 2rem;
-	 	font-family: "helvetica";
-	 	font-weight: 100;
-	 	font-style: normal;
-	 	font-weight: 1000;
-	 }
+h2{
+ 	font-size: 2rem;
+ 	font-family: "helvetica";
+ 	font-weight: 100;
+ 	font-style: normal;
+ 	font-weight: 1000;
+ }
 
 h3{
-	 	font-size: 1.8rem;
-	 	font-family: "helvetica", bold;
-	 	font-weight: 100;
-	 	font-style: normal;
-	 	font-weight: 1000;
-	 }
+ 	font-size: 1.8rem;
+ 	font-family: "helvetica", bold;
+ 	font-weight: 100;
+ 	font-style: normal;
+ 	font-weight: 1000;
+ }
 
 
 
@@ -115,7 +114,6 @@ img{
  -------------------------------------------------- */
 
 .wrapper {
-	background-color: grey;
 	margin: 15rem 15rem 15rem 30rem;
 }
 
@@ -190,6 +188,12 @@ img{
 
 	.proj_img_container:nth-child(2n) .proj_img{
 		margin: auto auto auto 0;
+	}
+
+	.proj_img_container a {
+		display: block;
+		margin: 0 auto;
+		z-index: 1000;
 	}
 
 .proj_img{
