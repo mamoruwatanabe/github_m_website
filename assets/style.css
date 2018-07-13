@@ -56,8 +56,7 @@
  }
 
  p{
- 	font-size: 1.3rem;
- 	margin-bottom: 2rem;
+ 	font-size: 1.4rem;
  }
 
  ul{
@@ -69,24 +68,18 @@
  	font-size: 2rem;
  	font-family: "STIXGeneral";
  	font-weight: 200;
- 	margin-bottom: 2rem;
-
  }
 
 h2{
  	font-size: 2rem;
- 	font-family: "helvetica";
  	font-weight: 100;
  	font-style: normal;
- 	font-weight: 1000;
  }
 
 h3{
  	font-size: 1.8rem;
- 	font-family: "helvetica", bold;
  	font-weight: 100;
  	font-style: normal;
- 	font-weight: 1000;
  }
 
 
@@ -95,8 +88,7 @@ h3{
 @media only screen and (max-width: 768px) {
 
 	 h1{
-	 	font-size: 3rem;
-	 	font-weight
+	 
 	 }
 
 }
@@ -114,18 +106,26 @@ img{
  -------------------------------------------------- */
 
 .wrapper {
-	margin: 15rem 15rem 15rem 30rem;
+	/*background-color: lightblue;*/
+	margin: 15rem 5rem 15rem 28rem;
 }
 
 	.wrapper > * {
-		margin-bottom: 10rem;
+		margin-bottom: 8rem;
 	}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
 
 @media only screen and (max-width: 768px) {
 
-	.wrapper > *{
-		
+	.wrapper {
+		margin: 4rem 2rem 5rem 8rem;
 	}
+
+		.wrapper > * {
+			margin-bottom: 4rem;
+		}
 
 }
 
@@ -134,41 +134,41 @@ img{
  02: Header Style
  -------------------------------------------------- */
 
-#header {
+.header_inner {
+	padding: 4rem 0 0 4rem;
+	position: fixed;
+	top: 0;
+}
+
+
+/* Menu 
+-------------------------------------------------- */
+
+.menu_inner {
 	position: fixed;
 	height: 100vh;
 	top: 0;
-	width: 100%;
-	z-index: 1000;
 }
-
-.header_inner {
-	padding: 4rem;
-}
-
-
-/* MENU */
 
 .menu{
-  background: #00000;
+  background: #000000;
   display: inline-flex;
+  left: 4rem;
+  position: absolute;
+  top: 50%;
   -webkit-transform: translateX(-47.75%) rotate(-90deg);
   transform: translateX(-47.75%) rotate(-90deg);
-  position: absolute;
-  left: 4rem;
-  top: 50%;
+  z-index: 1000;
 }
 
-
-.menu li{
-  float:left;
-  line-height:2rem;
-  padding: 0 5rem;
-  text-align:center;
-  background:#000;
-  color:#fff;
-  font-family: "helvetica";
+.menu li {
+  background:#000000;
+  color:#ffffff;
+  font-size: 1.4rem;
   font-weight: lighter;
+  line-height:2rem;
+  padding: 0 4.5rem;
+  text-align:center;
 }
 
 	.menu li:nth-child(2n){
@@ -176,42 +176,88 @@ img{
 	}
 
 
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+	.header_inner {
+		padding: 3rem 0 0 2rem;
+		position: relative;
+	}
+
+
+	/* Menu 
+	-------------------------------------------------- */
+
+	.menu{
+	  left: 2rem;
+	}
+
+}
+
+
 /* --------------------------------------------------
  03: Works Style
  -------------------------------------------------- */
 
-.proj_img_container{
+.proj_thumb_container {
 	/*background-color: blue;*/
-	position: relative;
-	width: 100%;
+	margin-left: auto;
+	margin-right: 0;
+	max-width: 60rem;
+	height: auto;
 }
 
-	.proj_img_container:nth-child(2n) .proj_img{
-		margin: auto auto auto 0;
+	.proj_thumb_container:nth-child(2n) {
+		margin-left: 0;
+		margin-right: auto;
 	}
 
-	.proj_img_container a {
-		display: block;
-		margin: 0 auto;
-		z-index: 1000;
-	}
-
-.proj_img{
-	margin: auto 0 auto auto;
+.proj_thumb_img {
 	position: relative;
-	width: 65rem;
 }
 
-img.proj_img_bg {
+.proj_thumb_bg {
 	height: 100%;
 	position: absolute;
 	right: 1.5rem;
 	top: 1.5rem;
+	width: 100%;
 	z-index: -1;
+}
+
+.proj_label p {
+	font-style: italic;
+	text-align: center;
+}
+
+ 	.proj_label p.name {
+ 		margin-top: 2.5rem;
+ 	}
+
+ 	.proj_label p.date {
+ 		color: grey;
+ 		margin-top: 0.6rem;
+ 	}
+
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+	.proj_thumb_bg {
+		right: 1rem;
+		top: 1rem;
+	}
+
 }
 
 
 /* --------------------------------------------------
  04: Footer
  -------------------------------------------------- */
+
+
 
