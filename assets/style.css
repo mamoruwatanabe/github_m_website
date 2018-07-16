@@ -151,7 +151,7 @@ img{
 }
 
 .menu{
-  background: #000000;
+  /*background: #000000;*/
   display: inline-flex;
   left: 4rem;
   position: absolute;
@@ -162,8 +162,8 @@ img{
 }
 
 .menu li {
-  background:#000000;
-  color:#ffffff;
+  /*background:#000000;*/
+  color:#6a6a6a;
   font-size: 1.4rem;
   font-weight: lighter;
   line-height:2rem;
@@ -260,7 +260,7 @@ img{
 
 .contact {
 	/*display: inline-block;*/
-	margin: 50rem auto;
+	margin: 20rem auto;
 	width: 50rem;
 }
 
