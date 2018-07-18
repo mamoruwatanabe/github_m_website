@@ -65,10 +65,12 @@
 
  	
  h1{
- 	font-size: 2rem;
+ 	font-size: 1.7rem;
  	font-family: "STIXGeneral";
  	font-weight: 200;
+
  }
+
 
 h2{
  	font-size: 2rem;
@@ -77,11 +79,19 @@ h2{
  }
 
 h3{
- 	font-size: 1.8rem;
- 	font-weight: 100;
+ 	font-size: 1.4rem;
+ 	font-weight: 90;
  	font-style: normal;
  }
 
+ h4{
+	font-size: 1rem;
+	font-family: "STIXGeneral";
+	font-weight: 50;
+
+ }
+
+ 
 
 
 
@@ -163,7 +173,7 @@ img{
 
 .menu li {
   /*background:#000000;*/
-  color:#6a6a6a;
+  color:#4d4d4d;
   font-size: 1.4rem;
   font-weight: lighter;
   line-height:2rem;
@@ -173,6 +183,11 @@ img{
 
 	.menu li:nth-child(2n){
 		padding: 0;
+	}
+
+	.menu li:hover{
+	color: #00008B;
+	text-decoration: none;
 	}
 
 
@@ -262,6 +277,22 @@ img{
 	/*display: inline-block;*/
 	margin: 20rem auto;
 	width: 50rem;
+}
+
+
+
+/* --------------------------------------------------
+ 04: Biography
+ -------------------------------------------------- */
+
+
+.bio {
+	margin: 20rem auto;
+	width: 50rem;
+}
+
+.bio_img {
+	margin: 13rem 60rem 60rem;
 }
 
 
