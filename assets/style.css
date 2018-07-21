@@ -51,9 +51,9 @@
  }
 
  a{
- 	font-size: 1.4rem;
+ 	font-size: 1.3rem;
  	font-weight: 90;
- 	font-style: normal;
+ 	font-style: italic;
  	color: inherit;
  	text-decoration: none;
  }
@@ -85,16 +85,21 @@ h2{
 h3{
  	font-size: 1.4rem;
  	font-weight: 90;
- 	font-style: normal;
+ 	font-style: bolder;
  }
 
  h4{
 	font-size: 1rem;
 	font-family: "STIXGeneral";
 	font-weight: 50;
-
  }
 
+h5{
+	font-family: "helvetica";
+ 	font-size: 1.6rem;
+ 	font-weight: 90;
+ 	font-style: bolder;
+ }
 
 
 
@@ -161,6 +166,7 @@ img{
 	position: fixed;
 	height: 100vh;
 	top: 0;
+	font-style: italic;
 }
 
 .menu{
@@ -272,22 +278,6 @@ img{
 }
 
 
-/* --------------------------------------------------
- 04: Contact
- -------------------------------------------------- */
-
-.contact {
-	/*display: inline-block;*/
-	margin: 20rem auto;
-	width: 50rem;
-}
-
-.contact a:hover{
-	color: #0000cc;
-	text-decoration: none;
-	}
-
-
 
 /* --------------------------------------------------
  04: Biography
@@ -297,6 +287,7 @@ img{
 .bio {
 	margin: 20rem auto;
 	width: 50rem;
+	font-style: italic;
 }
 
 .bio_img {
@@ -304,3 +295,23 @@ img{
 }
 
 
+
+
+/* --------------------------------------------------
+ 05: Contact
+ -------------------------------------------------- */
+
+.contact {
+	/*display: inline-block;*/
+	margin: 25rem auto;
+	width: 50rem;
+}
+
+.contact a:hover{
+	color: #0000cc;
+	text-decoration: none;
+	}
+
+.contact {
+	font-style: italic;
+}
