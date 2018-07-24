@@ -138,7 +138,7 @@ hr {
  -------------------------------------------------- */
 
 .wrapper {
-	padding: 15rem 15rem 15rem 28rem;
+	padding: 15rem 15rem 15rem 25rem;
 }
 
 .wrapper.special {
@@ -158,7 +158,8 @@ hr {
 @media only screen and (max-width: 768px) {
 
 	.wrapper {
-		padding: 4rem 2rem 5rem 8rem;
+		/*padding: 3rem 2rem 5rem 8rem;*/
+		padding: 3rem 2rem 5rem 3rem;
 	}
 
 		.wrapper > *:not(:last-child) {
@@ -192,21 +193,21 @@ hr {
 }
 
 .menu{
-  display: inline-flex;
-  left: 4rem;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateX(-47.75%) rotate(-90deg);
-  transform: translateX(-47.75%) rotate(-90deg);
-  z-index: 1000;
+	display: inline-flex;
+	left: 4rem;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateX(-47.75%) rotate(-90deg);
+	transform: translateX(-47.75%) rotate(-90deg);
+	z-index: 1000;
 }
 
 .menu li {
-  font-size: 1.4rem;
-  font-weight: lighter;
-  line-height:2rem;
-  padding: 0 4.5rem;
-  text-align:center;
+	font-size: 1.4rem;
+	font-weight: lighter;
+	line-height:2rem;
+	padding: 0 4.5rem;
+	text-align:center;
 }
 
 	.menu li:nth-child(2n){
@@ -227,11 +228,65 @@ hr {
 	/* Menu 
 	-------------------------------------------------- */
 
+	.menu_inner {
+		padding: 3rem 0 0 2rem;
+		position: relative;
+		height: auto;
+		
+	}
+
 	.menu{
-	  left: 2rem;
+	  -webkit-transform: none;
+	  transform: none;
+	  z-index: 1000;
+	  left: 0;
+
+	}
+
+	.menu li {
+		padding: 0 1rem;
 	}
 
 }
+
+
+/* --------------------------------------------------
+ 03: Index Style
+ -------------------------------------------------- */
+
+#index {
+	overflow: hidden;
+}
+
+#index #header {
+	color: white;
+}
+
+.index_wrapper {
+	/*margin: 15rem 0 0 15rem;*/
+}
+
+.index_img img {
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	object-fit: cover;
+
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+	.index_wrapper {
+		/*margin: 2rem 0 0 6rem;*/
+	}
+
+}
+
+
 
 
 /* --------------------------------------------------
