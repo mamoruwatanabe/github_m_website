@@ -70,8 +70,13 @@
 
  	
  h1{
+<<<<<<< HEAD
  	font-size: 1.8rem;
  	font-family: "STIXGeneral";
+=======
+ 	font-size: 1.7rem;
+ 	font-family: "Times";
+>>>>>>> e82ff1d97c4d9884cb666455c0b6c35799e5940a
  	font-weight: 200;
  }
 
@@ -352,13 +357,23 @@ hr {
  -------------------------------------------------- */
 
 .bio {
-	margin: 20rem auto;
+	margin: 2rem auto;
 	width: 50rem;
 	font-style: italic;
 }
 
 .bio_img {
+	display: inline-block;
 	margin: 13rem 60rem 60rem;
+	position: relative;
+}
+
+@media (max-width: 768px) {
+  .bio_img {
+    display: block;
+    float: none;
+    margin: auto auto;
+  }
 }
 
 
