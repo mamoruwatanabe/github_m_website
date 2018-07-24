@@ -69,7 +69,7 @@
  	
  h1{
  	font-size: 1.7rem;
- 	font-family: "STIXGeneral";
+ 	font-family: "Times";
  	font-weight: 200;
  	color: #424242;
 
@@ -285,13 +285,23 @@ img{
 
 
 .bio {
-	margin: 20rem auto;
+	margin: 2rem auto;
 	width: 50rem;
 	font-style: italic;
 }
 
 .bio_img {
+	display: inline-block;
 	margin: 13rem 60rem 60rem;
+	position: relative;
+}
+
+@media (max-width: 768px) {
+  .bio_img {
+    display: block;
+    float: none;
+    margin: auto auto;
+  }
 }
 
 
