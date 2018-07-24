@@ -40,7 +40,7 @@
 
  body {
  	background-color: #fffff;
- 	color: #00000;
+ 	color:#424242;
  	font-family: "helvetica", bold;
  	font-size: 1.6rem;
  	font-style: normal;
@@ -51,12 +51,14 @@
  }
 
  a{
- 	font-size: 1.3rem;
- 	font-weight: 90;
- 	font-style: italic;
  	color: inherit;
  	text-decoration: none;
  }
+
+ 	a:hover{
+		color: #0000cc;
+		text-decoration: none;
+	}
 
  p{
  	font-size: 1.4rem;
@@ -68,31 +70,28 @@
 
  	
  h1{
- 	font-size: 1.7rem;
+ 	font-size: 1.8rem;
  	font-family: "STIXGeneral";
  	font-weight: 200;
- 	color: #424242;
-
  }
 
 
 h2{
- 	font-size: 2rem;
- 	font-weight: 100;
- 	font-style: normal;
+ 	font-size: 1.4rem;
+ 	font-style: italic;
+ 	font-weight: 90;
+ 	line-height: 1.8;
  }
 
 h3{
- 	font-size: 1.4rem;
- 	font-weight: 90;
- 	font-style: bolder;
+ 	
  }
 
- h4{
+h4{
 	font-size: 1rem;
 	font-family: "STIXGeneral";
 	font-weight: 50;
- }
+}
 
 h5{
 	font-family: "helvetica";
@@ -120,15 +119,36 @@ img{
 
 
 /* --------------------------------------------------
+ 01: Common Styles
+ -------------------------------------------------- */
+
+/* Break Line
+-------------------------------------------------- */
+
+hr {
+	background-color: #424242;
+	border: none;
+	height: 1px;
+}
+
+
+
+/* --------------------------------------------------
  01: Wrapper Style
  -------------------------------------------------- */
 
 .wrapper {
-	/*background-color: lightblue;*/
-	margin: 15rem 5rem 15rem 28rem;
+	padding: 15rem 15rem 15rem 28rem;
 }
 
-	.wrapper > * {
+.wrapper.special {
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+}
+
+	.wrapper > *:not(:last-child) {
 		margin-bottom: 8rem;
 	}
 
@@ -138,10 +158,10 @@ img{
 @media only screen and (max-width: 768px) {
 
 	.wrapper {
-		margin: 4rem 2rem 5rem 8rem;
+		padding: 4rem 2rem 5rem 8rem;
 	}
 
-		.wrapper > * {
+		.wrapper > *:not(:last-child) {
 			margin-bottom: 4rem;
 		}
 
@@ -156,6 +176,7 @@ img{
 	padding: 4rem 0 0 4rem;
 	position: fixed;
 	top: 0;
+	z-index: 1000;
 }
 
 
@@ -167,10 +188,10 @@ img{
 	height: 100vh;
 	top: 0;
 	font-style: italic;
+	z-index: 1000;
 }
 
 .menu{
-  /*background: #000000;*/
   display: inline-flex;
   left: 4rem;
   position: absolute;
@@ -181,8 +202,6 @@ img{
 }
 
 .menu li {
-  /*background:#000000;*/
-  color:#4d4d4d;
   font-size: 1.4rem;
   font-weight: lighter;
   line-height:2rem;
@@ -192,11 +211,6 @@ img{
 
 	.menu li:nth-child(2n){
 		padding: 0;
-	}
-
-	.menu li:hover{
-	color: #0000cc;
-	text-decoration: none;
 	}
 
 
@@ -228,7 +242,7 @@ img{
 	/*background-color: blue;*/
 	margin-left: auto;
 	margin-right: 0;
-	max-width: 60rem;
+	max-width: 70rem;
 	height: auto;
 }
 
@@ -278,11 +292,9 @@ img{
 }
 
 
-
 /* --------------------------------------------------
  04: Biography
  -------------------------------------------------- */
-
 
 .bio {
 	margin: 20rem auto;
@@ -295,23 +307,42 @@ img{
 }
 
 
-
-
 /* --------------------------------------------------
  05: Contact
  -------------------------------------------------- */
 
 .contact {
-	/*display: inline-block;*/
-	margin: 25rem auto;
-	width: 50rem;
+	display: block;
+	margin: 0 auto;
+	max-width: 50rem;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
-.contact a:hover{
-	color: #0000cc;
-	text-decoration: none;
+	.contact *:not(:last-child) {
+		margin-bottom: 1.2rem;
 	}
 
-.contact {
-	font-style: italic;
+	.contact hr {
+		margin: 3rem 0 !important;
+	}
+
+.SNS_links a {
+	border-bottom: solid 1px black;
 }
+
+	.SNS_links a:hover {
+		border-bottom-color: #0000cc;
+	}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+
+
+}
+
