@@ -70,13 +70,9 @@
 
  	
  h1{
-<<<<<<< HEAD
- 	font-size: 1.8rem;
- 	font-family: "STIXGeneral";
-=======
- 	font-size: 1.7rem;
+ 	/*font-family: "STIXGeneral";*/
  	font-family: "Times";
->>>>>>> e82ff1d97c4d9884cb666455c0b6c35799e5940a
+ 	font-size: 1.8rem;
  	font-weight: 200;
  }
 
@@ -93,16 +89,15 @@ h3{
  }
 
 h4{
-	font-size: 1rem;
-	font-family: "STIXGeneral";
-	font-weight: 50;
+	/*font-family: "STIXGeneral";*/
+	font-family: "Times";
+	font-size: 1.2rem;
+	font-weight: 500;
 }
 
 h5{
-	font-family: "helvetica";
  	font-size: 1.6rem;
- 	font-weight: 90;
- 	font-style: bolder;
+ 	font-weight: 300;	
  }
 
 
@@ -127,7 +122,7 @@ img{
  01: Common Styles
  -------------------------------------------------- */
 
-/* Break Line
+/* Horizontal Rule
 -------------------------------------------------- */
 
 hr {
@@ -163,8 +158,11 @@ hr {
 @media only screen and (max-width: 768px) {
 
 	.wrapper {
-		/*padding: 3rem 2rem 5rem 8rem;*/
-		padding: 3rem 2rem 5rem 3rem;
+		padding: 7rem 2rem 5rem 2rem;
+	}
+
+	#works .wrapper {
+		padding: 7rem 2rem 5rem 3rem;
 	}
 
 		.wrapper > *:not(:last-child) {
@@ -234,23 +232,26 @@ hr {
 	-------------------------------------------------- */
 
 	.menu_inner {
-		padding: 3rem 0 0 2rem;
-		position: relative;
+		display: block;
 		height: auto;
-		
+		margin: 1.8rem 0 0 2rem;
+		position: relative;
 	}
 
 	.menu{
-	  -webkit-transform: none;
-	  transform: none;
-	  z-index: 1000;
-	  left: 0;
-
+		left: 0;
+		top: 0;
+		-webkit-transform: none;
+		transform: none;
 	}
 
 	.menu li {
 		padding: 0 1rem;
 	}
+
+		.menu li:first-child{
+			padding-left: 0;
+		}
 
 }
 
@@ -267,17 +268,12 @@ hr {
 	color: white;
 }
 
-.index_wrapper {
-	/*margin: 15rem 0 0 15rem;*/
-}
-
 .index_img img {
 	height: 100vh;
-	width: 100%;
+	object-fit: cover;
 	position: absolute;
 	top: 0;
-	object-fit: cover;
-
+	width: 100%;
 }
 
 /* -------------------------------------------------- */
@@ -285,12 +281,8 @@ hr {
 
 @media only screen and (max-width: 768px) {
 
-	.index_wrapper {
-		/*margin: 2rem 0 0 6rem;*/
-	}
 
 }
-
 
 
 
@@ -356,24 +348,21 @@ hr {
  04: Biography
  -------------------------------------------------- */
 
-.bio {
-	margin: 2rem auto;
-	width: 50rem;
-	font-style: italic;
+.bio_inner {
+	margin: 0 auto;
+	max-width: 50rem;
 }
 
-.bio_img {
-	display: inline-block;
-	margin: 13rem 60rem 60rem;
-	position: relative;
+	.bio_inner > *:not(:last-child) {
+		margin-bottom: 2.6rem;
+	}
+
+.bio_img {	
+	max-width: 42rem;
 }
 
-@media (max-width: 768px) {
-  .bio_img {
-    display: block;
-    float: none;
-    margin: auto auto;
-  }
+.bio_img_caption {
+	margin: 1.2rem 0 0 0;
 }
 
 
