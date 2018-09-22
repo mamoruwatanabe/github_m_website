@@ -1,0 +1,317 @@
+/* --------------------------------------------------
+00: Reset Style
+-------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h3, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, summary,
+time, mark, audio, video {	
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+
+/* --------------------------------------------------
+01: Basic Style
+-------------------------------------------------- */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body {
+	color: black;
+	font-family: "helvetica", sans-serif;
+	font-size: 2.4rem;
+	font-style: normal;
+	font-weight: 200;
+	line-height: 1.3;
+	-webkit-text-size-adjust: 100%;	
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover, .button:hover {
+	color: #1D2088 !important;
+}
+
+ul {
+	list-style: none;
+	text-align: right;
+}
+
+li {
+	cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	body {
+		font-size: 1.6rem;
+	}
+
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/* Highlight Selection
+-------------------------------------------------- */
+::selection { background: #000000; color: #fff; }
+::-moz-selection { background: #000000; color: #fff; }
+
+
+/* --------------------------------------------------
+01: Common Styles
+-------------------------------------------------- */
+
+.hidden {
+	display: none !important;
+}
+
+
+/* --------------------------------------------------
+01: Wrapper & Inner Style
+-------------------------------------------------- */
+
+.wrapper {
+	height: 100vh;
+	padding: 140px 60px;
+	position: absolute;
+	width: 100vw;
+	overflow: hidden;
+}
+
+	.wrapper.special {
+		padding: 70px 60px;
+	}
+
+.inner {
+	height: 100%;
+	/*overflow: hidden;*/
+	position: relative;
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+	.wrapper {
+		padding: 65px 25px;
+	}
+
+		.wrapper.special {
+			padding: 25px 25px;
+		}
+
+}
+
+
+/* --------------------------------------------------
+03: Header Style
+-------------------------------------------------- */
+
+#header {
+	position: absolute;
+}
+
+	#header .inner > * {
+		cursor: pointer;
+		margin: 0;
+		position: absolute;
+		z-index: 1000;
+	}
+
+#btn_title {
+	left: 0;
+	top: 0;
+}
+
+#btn_info {
+	right: 0;
+	top: 0;
+}
+
+#btn_about {
+	bottom: 0;
+	left: 0;
+}
+
+#btn_work {
+	bottom: 0;
+	right: 0;
+}
+
+
+/* --------------------------------------------------
+03: Main & Work Style
+-------------------------------------------------- */
+
+#sec_main {
+	z-index: 999;
+}
+
+.top_block {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+	height: 70%;
+	position: relative;
+	width: 100%;
+}
+	
+.top_block > *{
+	width: 50%;
+}
+
+.top_block_inner > * {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.top_block_inner.right > * {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	z-index: 999;
+}
+
+.proj_list_name_container li {
+	float: right;
+}
+
+.top_block_inner.left > * {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+	.top_block_inner.left > * > * {
+	  	position: relative;
+		top: 50%;
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	    width: 100%;
+	}
+
+.bottom_block {
+	height: auto;
+	margin-top: 40px;
+}
+
+#btn_proj_close {
+	cursor: pointer;
+    line-height: 1;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transform: translateY(-15%);
+    transform: translateY(-15%);
+}
+
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+	.bottom_block {
+		margin-top: 15px;
+	}
+
+}
+
+@media screen and (max-width: 768px) 
+and (orientation: portrait) {
+
+	.top_block {
+		background-color: grey;
+		display: block;
+		/*height: auto;*/
+	}
+
+		.top_block > * {
+			width: 100%;
+			position: relative;
+		}
+
+	/* Remove vertical align on all */
+	.top_block * {
+		top: 0 !important;
+	    -webkit-transform: none !important;
+	    transform: none !important;
+	}
+
+	.top_block_inner > * {
+	    width: 100%;
+	}
+
+	.top_block_inner.left {
+		margin-top: 15px;
+	}
+
+	.top_block_inner.right > * {
+		position: relative;
+	}
+
+	#btn_proj_close {
+	    margin-bottom: 15px; 
+		position: relative;
+	}
+
+}
+
+ 
+/* --------------------------------------------------
+03: About Style
+-------------------------------------------------- */
+
+#sec_about .inner {
+	width: 55%;
+}
+
+p mark {
+	opacity: 0; 
+}
+
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+}
+
+
+
+

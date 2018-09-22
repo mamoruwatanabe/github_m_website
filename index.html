@@ -1,38 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Mamoru Watanabe</title>
 	<meta charset = "utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/m_style.css">
 
 	<!-- JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="assets/scripts.js"></script>
+	<script src="assets/js/m_script.js"></script>
 
 	<!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-	<link rel="manifest" href="images/favicon/site.webmanifest">
-	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+	<link rel="manifest" href="favicons/site.webmanifest">
+	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 
 </head>
 
 
-<body id="index">
+<!-- ============================== Main ============================== -->
 
-	<header id="header"><script>$("#header").load("header.html");</script></header>
+<body>
 
-	<section class="index_wrapper">
+	<!-- ============================== Headings ============================== -->
 
-			<div class="index_img"><img id="rand_img"></div>
+	<header id="header" class="wrapper special header_class">
+		
+		<div class="inner">
+		
+			<h1 id="btn_main" class="button">Mamoru Watanabe</h1>
+			<h1 id="btn_info" class="button">(Info)</h1>
+			<h1 id="btn_about" class="button">About</h1>
+			<h1 id="btn_work" class="button">Work</h1>
+
+		</div>
+
+	</header>
+
+	<!-- ============================== Main ============================== -->
+
+	<section id="sec_main" class="wrapper">
+
+		<div class="inner">
+				
+			<div class="top_block">
+		<!-- 		<div class="top_block_inner right">
+					<ul class="main_proj_list_container">
+						<li id="main_proj_name_1">All the things happening for everyone</li><br>
+						<li id="main_proj_name_2">One point to see your own views</li><br>
+						<li id="main_proj_name_3">Beyond music imagination</li><br>
+						<li id="main_btn_work">...</li><br>
+					</ul>
+				</div>
+
+				<div class="top_block_inner left">
+					<div class="main_proj_img_container">
+						<div id="main_proj_img_1" class="hidden"><img src="images/opsy.jpg"></div>
+						<div id="main_proj_img_2" class="hidden"><img src="images/opsy2.jpg"></div>
+						<div id="main_proj_img_3" class="hidden"><img src="images/opsy3.jpg"></div>
+					</div>
+				</div> -->
+			</div>
+
+			<div class="bottom_block">
+				<div class="contact">
+					<p>+44 7928 274508</p>
+					<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x31;&#x40;&#x6d;&#x61;&#109;&#x6f;&#x72;&#x75;&#119;&#97;&#116;&#97;&#110;&#97;&#98;&#x65;&#x2e;&#99;&#x6f;&#109;">&#49;&#64;&#x6d;&#97;&#x6d;&#x6f;&#x72;&#x75;&#119;&#x61;&#x74;&#97;&#110;&#x61;&#x62;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a>
+				</div>
+			</div>
+
+		</div>
 
 	</section>
 
+
+	<!-- ============================== Work ============================== -->
+
+	<section id="sec_work" class="wrapper hidden">
+		
+		<!-- This is an empty section because both work section 
+		and main section share the project list section -->
+
+	</section>
+	
+
+	<!-- ============================== Project List ============================== -->
+
+	<section id="sec_proj_list" class="wrapper hidden">
+		
+		<div class="inner">
+
+			<div class="top_block">
+				<div class="top_block_inner right">
+
+					<ul class="proj_list_name_container">
+						<li id="proj_list_name_1">Project 1 Title</li><br>
+						<li id="proj_list_name_2">Project 2 Title</li><br>
+						<li id="proj_list_name_3">Project 3 Title</li><br>
+						<li id="proj_list_name_4">Project 4 Title</li><br>
+						<li id="proj_list_name_5">Project 5 Title</li><br>
+						<li id="main_btn_work">...</li>
+					</ul>
+
+				</div>
+
+				<div class="top_block_inner left">
+					<div class="proj_list_img_container">
+						<div id="proj_list_img_1" class="hidden"><img src="images/opsy.jpg"></div>
+						<div id="proj_list_img_2" class="hidden"><img src="images/opsy2.jpg"></div>
+						<div id="proj_list_img_3" class="hidden"><img src="images/opsy3.jpg"></div>
+						<div id="proj_list_img_4" class="hidden"><img src="images/opsy.jpg"></div>
+						<div id="proj_list_img_5" class="hidden"><img src="images/opsy2.jpg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bottom_block"></div>
+
+		</div>
+
+	</section>
+
+
+	<!-- ============================== Project Page ============================== -->
+
+	<section id="sec_proj" class="wrapper hidden">
+		
+		<div class="inner">
+
+			<div class="top_block">
+				<div class="top_block_inner right">
+
+					<div id="btn_proj_close" class="button hidden"><p>X</p></div>
+
+					<div class="proj_head_container">
+						<p id="proj_head_1" class="hidden">
+							Project 1 Heading<br>
+							Material 1, Material 2, Material 3<br>
+							2018
+						</p>
+						<p id="proj_head_2" class="hidden">
+							Project 2 Heading<br>
+							Material 1, Material 2, Material 3<br>
+							2018
+						</p>
+						<p id="proj_head_3" class="hidden">
+							Project 3 Heading<br>
+							Material 1, Material 2, Material 3<br>
+							2018
+						</p>
+						<p id="proj_head_4" class="hidden">
+							Project 4 Heading<br>
+							Material 1, Material 2, Material 3<br>
+							2018
+						</p>
+						<p id="proj_head_5" class="hidden">
+							Project 5 Heading<br>
+							Material 1, Material 2, Material 3<br>
+							2018
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="top_block_inner left">
+					<div class="proj_img_container">
+						<div id="proj_img_1" class="hidden"><img src="images/opsy.jpg"></div>
+						<div id="proj_img_2" class="hidden"><img src="images/opsy2.jpg"></div>
+						<div id="proj_img_3" class="hidden"><img src="images/opsy3.jpg"></div>
+						<div id="proj_img_4" class="hidden"><img src="images/opsy.jpg"></div>
+						<div id="proj_img_5" class="hidden"><img src="images/opsy2.jpg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bottom_block">
+				<div class="proj_desc_container">
+					<p id="proj_desc_1" class="hidden">Velit esse molestie consequat, vel illum dolore eu feugiat nulla. is an artist born in Tokyo 1992. Lives and Works in London. He working with multimedia and collaborative practice. His interest is Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+					<p id="proj_desc_3" class="hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed.</p>
+					<p id="proj_desc_5" class="hidden">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit loborti.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<!-- ============================== About ============================== -->
+
+	<section id="sec_about" class="wrapper special hidden">
+
+		<div class="inner">
+
+			<div class="block">
+				<p><mark>Mamoru Watanabe</mark> is an artist born in Tokyo 1992. Lives and Works in London. He working with multimedia and collaborative practice. His interest is Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><br>
+
+				<div class="links">
+					<a href="">Daily Results *Image Blog</a><br>
+					<a href="">Email</a><br>
+					<a href="">Twitter</a><br>
+					<a href="">Medium</a><br>
+					<a href="">Facebook</a>
+				</div>
+			</div>
+
+		</div>
+		
+	</section>
+
+
+	<!-- ============================== Info ============================== -->
+
+	<section id="sec_info">
+		
+	</section>
+
+
 </body>
+
 </html>
