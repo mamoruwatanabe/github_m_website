@@ -83,8 +83,13 @@ img {
 
 /* Highlight Selection
 -------------------------------------------------- */
-::selection { background: #000000; color: #fff; }
-::-moz-selection { background: #000000; color: #fff; }
+/* Black */
+/*::-moz-selection { background: rgba(0, 0, 0, 0.99); color: #fff; }
+::selection { background: rgba(0, 0, 0, 0.99); color: #fff;}*/
+
+/* Mamoru Blue */
+::-moz-selection { background: rgba(29, 32, 136, 0.99); color: #fff; }
+::selection { background: rgba(29, 32, 136, 0.99); color: #fff;}
 
 
 /* --------------------------------------------------

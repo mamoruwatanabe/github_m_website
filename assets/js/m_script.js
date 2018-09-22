@@ -48,6 +48,9 @@ $(document).ready(function() {
 		// Close project if open
 		if (proj_active == true) {closeProject();}
 
+		// Make sure main button is visible
+		$('#btn_main').removeClass('hidden');
+
 		// Check if section is currently active
 		if (!sec_active) {
 			// Hide other sections
@@ -85,6 +88,7 @@ $(document).ready(function() {
 
 	});
 
+	// Getting to work by clicking "..." on main
 	$('#main_btn_work').click(function(event) {
 		// Hide other sections
 		$('section').not('#sec_work').addClass('hidden');
