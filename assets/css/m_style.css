@@ -39,7 +39,7 @@ html{
 }
 
 body {
-	color: black;
+	color: #000;
 	font-family: "helvetica", sans-serif;
 	font-size: 2.4rem;
 	font-style: normal;
@@ -54,7 +54,7 @@ a {
 }
 
 a:hover, .button:hover {
-	color: #1D2088 !important;
+	color: #1D2088;
 }
 
 ul {
@@ -92,7 +92,7 @@ img {
 -------------------------------------------------- */
 
 .hidden {
-	display: none !important;
+	display: none !important; 
 }
 
 
@@ -102,19 +102,22 @@ img {
 
 .wrapper {
 	height: 100vh;
+	overflow: hidden;
 	padding: 140px 60px;
 	position: absolute;
 	width: 100vw;
-	overflow: hidden;
 }
 
-	.wrapper.special {
+	#header.wrapper {
 		padding: 70px 60px;
+	}
+
+	#sec_about.wrapper {
+		padding: 70px 60px 140px;
 	}
 
 .inner {
 	height: 100%;
-	/*overflow: hidden;*/
 	position: relative;
 }
 
@@ -124,11 +127,15 @@ img {
 @media only screen and (max-width: 768px) {
 
 	.wrapper {
-		padding: 65px 25px;
+		padding: 55px 25px;
 	}
 
-		.wrapper.special {
+		#header.wrapper {
 			padding: 25px 25px;
+		}
+
+		#sec_about.wrapper {
+			padding: 25px 25px 55px;
 		}
 
 }
@@ -171,19 +178,25 @@ img {
 
 
 /* --------------------------------------------------
-03: Main & Work Style
+03: Common Layout Style
 -------------------------------------------------- */
 
 #sec_main {
 	z-index: 999;
 }
 
+section:not(#sec_main) .inner {
+	overflow: auto;
+}
+
+
 .top_block {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
-	height: 70%;
+	height: 75%;
+	margin-bottom: 40px;
 	position: relative;
 	width: 100%;
 }
@@ -226,8 +239,24 @@ img {
 
 .bottom_block {
 	height: auto;
-	margin-top: 40px;
 }
+
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+	.top_block {
+		margin-bottom: 15px;
+	}
+
+}
+
+
+/* --------------------------------------------------
+03: Project Page Style
+-------------------------------------------------- */
 
 #btn_proj_close {
 	cursor: pointer;
@@ -239,55 +268,49 @@ img {
     transform: translateY(-15%);
 }
 
-
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
 @media screen and (max-width: 768px) {
 
-	.bottom_block {
-		margin-top: 15px;
+	#btn_proj_close {
+	    margin-bottom: 15px; 
+	    -webkit-transform: none;
+	    transform: none;
 	}
 
 }
 
+
 @media screen and (max-width: 768px) 
 and (orientation: portrait) {
 
-	.top_block {
-		background-color: grey;
+	#sec_proj .top_block {
 		display: block;
-		/*height: auto;*/
+		height: auto;
 	}
 
-		.top_block > * {
+		#sec_proj .top_block > * {
 			width: 100%;
-			position: relative;
 		}
 
-	/* Remove vertical align on all */
-	.top_block * {
-		top: 0 !important;
-	    -webkit-transform: none !important;
-	    transform: none !important;
+	#sec_proj .top_block * {
+		top: 0;
+	    -webkit-transform: none;
+	    transform: none;
 	}
 
-	.top_block_inner > * {
+	#sec_proj .top_block_inner > * {
 	    width: 100%;
 	}
 
-	.top_block_inner.left {
-		margin-top: 15px;
+	#sec_proj .top_block_inner.right {
+		margin-bottom: 15px;
 	}
 
-	.top_block_inner.right > * {
-		position: relative;
-	}
-
-	#btn_proj_close {
-	    margin-bottom: 15px; 
-		position: relative;
-	}
+		#sec_proj .top_block_inner.right > * {
+			position: relative;
+		}
 
 }
 
@@ -299,11 +322,6 @@ and (orientation: portrait) {
 #sec_about .inner {
 	width: 55%;
 }
-
-p mark {
-	opacity: 0; 
-}
-
 
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
