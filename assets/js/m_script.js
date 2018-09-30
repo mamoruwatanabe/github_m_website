@@ -21,6 +21,8 @@ $(document).ready(function() {
 	main_proj_name_id,
 	main_proj_img_id,
 
+	proj_id,
+
 	proj_name_id,
 	proj_head_id,
 	proj_img_id,
@@ -33,6 +35,24 @@ $(document).ready(function() {
 /* --------------------------------------------------
  Actions
  -------------------------------------------------- */
+
+ 	// Button Hover
+	// ------------------------------------
+
+	// Only do hover function for buttons if not mobile
+	$('#header .inner > *').hover(function(event) {
+		if (!isMobile) { $('#' + event.target.id).addClass('hover'); };
+	}, function() {
+		if (!isMobile) { $('#' + event.target.id).removeClass('hover') };
+	});
+
+
+	$('#btn_proj_close').hover(function(event) {
+		$('#btn_proj_close .button').addClass('hover');
+	}, function() {
+		$('#btn_proj_close .button').removeClass('hover');
+	});
+
 
 	// Section Selection
 	// ------------------------------------
@@ -67,13 +87,19 @@ $(document).ready(function() {
 
 			// Change button colours
 			changeButtonColor(true);
+
 		} else {
 			// Make it hidden
 			$('#' + sec_id).addClass('hidden');
 			// Make main section active
 			activateMainSection();
 
-			// Revert button colours
+			// Remove .hover class in mobile
+			if (isMobile) {
+				$('#' + btn_id).removeClass('hover');
+			}
+			
+			// Revert button colour
 			changeButtonColor(false);
 		}
 
@@ -124,15 +150,14 @@ $(document).ready(function() {
 
 	// Project Click
 	$('.proj_list_name_container > *').not('#main_btn_work').click(function(event){
-		// Retrieve ids 
+		// Retrieve id
 		proj_list_name_id = event.target.id;
-		proj_name_id = proj_list_name_id.replace('_list', '');
-		proj_head_id = proj_name_id.replace('name', 'head');	
-		proj_img_id = proj_name_id.replace('name', 'img');
-		proj_desc_id = proj_name_id.replace('name', 'desc');
+		proj_id = proj_list_name_id.replace('_list_name', '');
+		console.log(proj_id);
 
 		// Open the project
 		openProject();
+		checkScrollBar();
 
 		// Reset project list
 		$('.proj_list_name_container > *').css('opacity', '1').css('color', '#000');
@@ -151,6 +176,14 @@ $(document).ready(function() {
  Functions
  -------------------------------------------------- */
 
+  	// Change Section Height for Mobile
+	// ------------------------------------
+	function changeSectionHeight() {
+        $('.wrapper').each(function() {
+	        $(this).css('height', $(window).height());
+	    });
+    };
+
  	// Section Selection
 	// ------------------------------------
 
@@ -159,28 +192,28 @@ $(document).ready(function() {
 		$('#sec_main').removeClass('hidden');
 		// Show main project list
 		$('#sec_proj_list').removeClass('hidden');
-		$('.proj_list_name_container > *:nth-child(n+7)').addClass('hidden');
+		$('.proj_list_name_container > *:nth-child(n+5)').addClass('hidden');
 		$('#main_btn_work').removeClass('hidden');
 	}
-	activateMainSection();
 
 	function activateWorkSection() {
 		// Make main & work section unhidden
 		$('#sec_work').removeClass('hidden');
 		// Show work project list
 		$('#sec_proj_list').removeClass('hidden');
-		$('.proj_list_name_container > *:nth-child(n+7)').removeClass('hidden');
+		$('.proj_list_name_container > *:nth-child(n+5)').removeClass('hidden');
 		$('#main_btn_work').addClass('hidden');
 	}
 
  	function changeButtonColor(active) {
 		if (active) {
 			// Change button colours
-			$('#' + btn_id).not('#btn_main').css('color','#1D2088');
-			$('#header .inner > *').not('#' + btn_id).css('color','#000');
+			$('#' + btn_id).not('#btn_main').css('color', '#1D2088');
+			$('#header .inner > *').not('#' + btn_id).css('color', '#000');
+			$('#header .inner > *').not('#' + btn_id).removeClass('hover');
 		} else {
 			// Revert button colours
-			$('#' + btn_id).css('color','#000');
+			$('#' + btn_id).css('color', '#000');
 		}
 	}
 
@@ -201,14 +234,12 @@ $(document).ready(function() {
 	}
 
 	function openProject() {
-		// Unhide project section
+		// Unhide project section & project
 		$('#sec_proj').removeClass('hidden');
+		$('#' + proj_id).removeClass('hidden');
 
-		// Reveal project page
-		$('#' + proj_head_id).removeClass('hidden');
-		$('#' + proj_img_id).removeClass('hidden');
-		$('#' + proj_desc_id).removeClass('hidden');
-		$('#btn_proj_close').removeClass('hidden');
+		// Reset scrollbar position to top
+		$('#' + proj_id).scrollTop(0);
 
 		// Hide main section & work section
 		$('#sec_main').addClass('hidden');
@@ -220,14 +251,9 @@ $(document).ready(function() {
 	}
 
 	function closeProject() {
-		// Hide project section
+		// Hide project section & project
 		$('#sec_proj').addClass('hidden');
-
-		// Hide project page children
-		$('#' + proj_head_id).addClass('hidden');
-		$('#' + proj_img_id).addClass('hidden');
-		$('#' + proj_desc_id).addClass('hidden');
-		$('#btn_proj_close').addClass('hidden');
+		$('#' + proj_id).addClass('hidden');
 
 		// Unhide work section
 		$('#sec_work').removeClass('hidden');
@@ -239,6 +265,46 @@ $(document).ready(function() {
 
 		proj_active = false;
 	}
+
+	// Adjust spacing if there's a scrollbar on project page 
+	function checkScrollBar() {
+
+		if ($('#' + proj_id).get(0).scrollHeight > $('#' + proj_id).height()) {
+
+			$('#btn_proj_close').css('margin-right', '16.5px');
+			$('#sec_proj .block_inner.right > *').each(function() { $(this).css('padding-right', 'calc(10px + 3px)') });
+			if (isMobile) {
+				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('padding-right', 'calc(10px + 3px)') });
+			} else {
+				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('margin-right', '-1.5px') });
+			}	
+
+		} else {
+
+			$('#btn_proj_close').css('margin-right', '0');
+			$('#sec_proj .block_inner.right > *').each(function() { $(this).css('padding-right', '0') });
+			if (isMobile) {
+				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('padding-right', '0') });
+			} else {
+				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('margin-right', '0') });
+			}
+		}
+	}
+
+
+/* --------------------------------------------------
+ Calling Functions
+ -------------------------------------------------- */
+
+ 	// Call Functions
+	changeSectionHeight();
+	activateMainSection();
+
+	// Reload Functions on Window Resize 
+	$(window).resize(function () {
+		changeSectionHeight();
+		if (proj_active) {checkScrollBar();}
+    });
 
 
 });

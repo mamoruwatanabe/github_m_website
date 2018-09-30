@@ -45,7 +45,13 @@ body {
 	font-style: normal;
 	font-weight: 200;
 	line-height: 1.3;
+    overflow-x: hidden;
+    position: fixed;
 	-webkit-text-size-adjust: 100%;	
+}
+
+p.pS {
+	font-size: 2.1rem;
 }
 
 a {
@@ -53,8 +59,12 @@ a {
 	text-decoration: none;
 }
 
-a:hover, .button:hover {
-	color: #1D2088;
+	a:hover {
+		color: #1D2088;
+	}
+
+.hover {
+	color: #1D2088 !important;
 }
 
 ul {
@@ -67,10 +77,14 @@ li {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px) {
 
 	body {
 		font-size: 1.6rem;
+	}
+
+	p.pS {
+		font-size: 1.3rem;
 	}
 
 }
@@ -78,7 +92,6 @@ li {
 img {
 	max-width: 100%;
 	height: auto;
-	vertical-align: bottom;
 }
 
 /* Highlight Selection
@@ -99,6 +112,12 @@ img {
 .hidden {
 	display: none !important; 
 }
+
+ /* Scroll Bar
+-------------------------------------------------- */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 1); }
 
 
 /* --------------------------------------------------
@@ -129,7 +148,7 @@ img {
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px) {
 
 	.wrapper {
 		padding: 55px 25px;
@@ -194,7 +213,6 @@ section:not(#sec_main) .inner {
 	overflow: auto;
 }
 
-
 .top_block {
 	display: -webkit-flex;
 	display: flex;
@@ -203,11 +221,12 @@ section:not(#sec_main) .inner {
 	height: 75%;
 	margin-bottom: 40px;
 	position: relative;
+	-webkit-overflow-scrolling: touch;
 	width: 100%;
 }
 	
-.top_block > *{
-	width: 50%;
+.top_block > * {
+	width: 50% ;
 }
 
 .top_block_inner > * {
@@ -216,7 +235,7 @@ section:not(#sec_main) .inner {
     transform: translateY(-50%);
 }
 
-.top_block_inner.right > * {
+.top_block_inner.right > *{
 	display: inline-block;
 	position: absolute;
 	right: 0;
@@ -236,9 +255,6 @@ section:not(#sec_main) .inner {
 
 	.top_block_inner.left > * > * {
 	  	position: relative;
-		top: 50%;
-	    -webkit-transform: translateY(-50%);
-	    transform: translateY(-50%);
 	    width: 100%;
 	}
 
@@ -250,7 +266,7 @@ section:not(#sec_main) .inner {
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 812px) {
 
 	.top_block {
 		margin-bottom: 15px;
@@ -263,58 +279,102 @@ section:not(#sec_main) .inner {
 03: Project Page Style
 -------------------------------------------------- */
 
-#btn_proj_close {
-	cursor: pointer;
-    line-height: 1;
+.block {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.block_inner {
+	position: relative;
+	-webkit-overflow-scrolling: touch;
+	width: 50%;
+}
+
+	.block_inner *:not(:last-child){
+		margin-bottom: 40px;
+	}
+
+.block_inner.right > * {
+	display: inline-block; 
+	padding-left: 40px;
 	position: absolute;
 	right: 0;
-	top: 0;
-	-webkit-transform: translateY(-15%);
-    transform: translateY(-15%);
+	text-align: right;
+	width: 100%;
+	z-index: 999;
+}
+
+	.block_inner.right > *:not(#btn_proj_close)  {
+	    top: 50%;
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	}
+
+.proj_img {
+	line-height: 0;
+}
+
+#btn_proj_close {
+	cursor: pointer;
+    line-height: 0.85;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
 }
 
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
-@media screen and (max-width: 768px) {
 
-	#btn_proj_close {
-	    margin-bottom: 15px; 
-	    -webkit-transform: none;
-	    transform: none;
-	}
+@media screen and (max-width: 812px) {
 
-}
-
-
-@media screen and (max-width: 768px) 
-and (orientation: portrait) {
-
-	#sec_proj .top_block {
-		display: block;
-		height: auto;
-	}
-
-		#sec_proj .top_block > * {
-			width: 100%;
-		}
-
-	#sec_proj .top_block * {
-		top: 0;
-	    -webkit-transform: none;
-	    transform: none;
-	}
-
-	#sec_proj .top_block_inner > * {
-	    width: 100%;
-	}
-
-	#sec_proj .top_block_inner.right {
+	.block_inner *:not(:last-child){
 		margin-bottom: 15px;
 	}
 
-		#sec_proj .top_block_inner.right > * {
-			position: relative;
+	.block_inner.right > * {
+		padding-left: 15px;
+	}
+
+	#btn_proj_close {
+	    line-height: 0.9;
+	}
+
+}
+
+@media screen and (max-width: 812px) 
+and (orientation: portrait) {
+
+	.block {
+		display: block;
+	}
+
+		.block * {
+			top: 0;
+		    -webkit-transform: none;
+		    transform: none;
+		}
+
+	.block_inner {
+		width: 100%;
+	}
+
+	.block_inner.right > *{
+		margin: 29px 0 15px;
+		position: relative;
+	}
+
+		.block_inner.right > *:not(#btn_proj_close)  {
+		    top: 0;
+		    -webkit-transform: none;
+		    transform: none;
 		}
 
 }
@@ -325,13 +385,54 @@ and (orientation: portrait) {
 -------------------------------------------------- */
 
 #sec_about .inner {
-	width: 55%;
+	width: 50%;
 }
 
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px)
+and (orientation: portrait) {
+	#sec_about .inner {
+		width: 70%;
+	}
+}
+
+ 
+/* --------------------------------------------------
+03: Info Style
+-------------------------------------------------- */
+
+.info_text > *:first-child {
+	margin-bottom: 20px;
+}
+
+.info_text > *:not(:first-child):not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.soon {
+	position: absolute;
+	top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+@media only screen and (max-width: 812px) {
+	
+	.info_text > *:first-child {
+		margin-bottom: 10px;
+	}
+
+	.info_text > *:not(:first-child):not(:last-child) {
+		margin-bottom: 5px;
+	}
 
 }
 
