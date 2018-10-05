@@ -271,10 +271,10 @@ $(document).ready(function() {
 
 		if ($('#' + proj_id).get(0).scrollHeight > $('#' + proj_id).height()) {
 
-			$('#btn_proj_close').css('margin-right', '16.5px');
-			$('#sec_proj .block_inner.right > *').each(function() { $(this).css('padding-right', 'calc(10px + 3px)') });
+			$('#btn_proj_close').css('margin-right', '15.5px');
+			$('#sec_proj .block_inner.right > *').each(function() { $(this).css('padding-right', '12px') });
 			if (isMobile) {
-				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('padding-right', 'calc(10px + 3px)') });
+				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('padding-right', '12px') });
 			} else {
 				$('#sec_proj .block_inner.left > *').each(function() { $(this).css('margin-right', '-1.5px') });
 			}	
@@ -296,15 +296,19 @@ $(document).ready(function() {
  Calling Functions
  -------------------------------------------------- */
 
- 	// Call Functions
+ 	// Call functions
 	changeSectionHeight();
 	activateMainSection();
 
-	// Reload Functions on Window Resize 
+	// Reload functions on window resize & orientation change 
 	$(window).resize(function () {
 		changeSectionHeight();
 		if (proj_active) {checkScrollBar();}
     });
 
+    $(window).on("deviceorientation", function() {
+    	changeSectionHeight();
+		if (proj_active) {checkScrollBar();}
+    });
 
 });
