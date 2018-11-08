@@ -127,8 +127,8 @@ img {
 .wrapper {
 	height: 100vh;
 	overflow: hidden;
-	/*padding: 140px 60px;*/
-	padding: 137px 60px 140px; /* -3px from top */
+	padding: 140px 60px;
+	/*padding: 137px 60px 140px;*/ /* -3px from top */
 	position: absolute;
 	width: 100vw;
 }
@@ -152,8 +152,8 @@ img {
 @media only screen and (max-width: 812px) {
 
 	.wrapper {
-		/*padding: 55px 25px;*/
-		padding: 52px 25px 55px; /* -3px from top */
+		padding: 55px 25px;
+		/*padding: 52px 25px 55px;*/ /* -3px from top */
 	}
 
 		#header.wrapper {
@@ -280,13 +280,13 @@ section:not(#sec_main) .inner {
 -------------------------------------------------- */
 
 .block {
-	bottom: -3px; /* to account for strange 3px gap at bottom */
+	/*bottom: -3px;*/ /* to account for strange 3px gap at bottom */
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
 	height: 100%;
-	margin-bottom: -3px; /* to account for strange 3px gap at bottom */
+	/*margin-bottom: -3px;*/ /* to account for strange 3px gap at bottom */
 	overflow-y: auto;
 	overflow-x: hidden;
 	position: relative;
